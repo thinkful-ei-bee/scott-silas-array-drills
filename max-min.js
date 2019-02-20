@@ -62,3 +62,29 @@ function filter(arr, fn) {
   } return newArray;
 }
 console.log(filter(['Rich', 'Joe', 'Bhaumik', 'Ray'], (name) => name[0] === 'R'));
+
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  let times = '';
+  return function(location) {
+    warningCounter++;
+    if (warningCounter === 1) {
+      times = 'time';
+    } else if (warningCounter === 0 || warningCounter >= 2) {
+      times = 'times';
+    }
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} ${times} today!`);
+  };
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the Road');
+const hailWarning = hazardWarningCreator('Hail on the Road');
+const iceWarning = hazardWarningCreator('Ice on the Road');
+
+rocksWarning('Main St and Pacific Ave');
+rocksWarning('Centinela Ave and Olympic Blvd');
+hailWarning('Main St and Pacific Ave');
+hailWarning('Centinela Ave and Olympic Blvd');
+iceWarning('Main St and Pacific Ave');
+iceWarning('Centinela Ave and Olympic Blvd');
