@@ -61,7 +61,7 @@ function filter(arr, fn) {
     }
   } return newArray;
 }
-console.log(filter(['Rich', 'Joe', 'Bhaumik', 'Ray'], (name) => name[0] === 'R'));
+//console.log(filter(['Rich', 'Joe', 'Bhaumik', 'Ray'], (name) => name[0] === 'R'));
 
 function hazardWarningCreator(typeOfWarning) {
   let warningCounter = 0;
@@ -81,10 +81,17 @@ function hazardWarningCreator(typeOfWarning) {
 const rocksWarning = hazardWarningCreator('Rocks on the Road');
 const hailWarning = hazardWarningCreator('Hail on the Road');
 const iceWarning = hazardWarningCreator('Ice on the Road');
-
+/*
 rocksWarning('Main St and Pacific Ave');
 rocksWarning('Centinela Ave and Olympic Blvd');
 hailWarning('Main St and Pacific Ave');
 hailWarning('Centinela Ave and Olympic Blvd');
 iceWarning('Main St and Pacific Ave');
 iceWarning('Centinela Ave and Olympic Blvd');
+*/
+
+function turtle(arr) {
+  let newArray = arr.filter((num) => num[0] >= 0 && num[1] >= 0);
+  let mapArray = newArray.map((coord) => coord[0] + coord[1]);
+  mapArray.forEach((x) => console.log(x));
+}
