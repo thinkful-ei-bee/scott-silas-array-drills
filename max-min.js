@@ -30,5 +30,10 @@ function min(numbers) {
     return min;
 }
 
-console.log(max([1,3,11,5,14,7]));
-console.log(min([1,3,11,5,14,7]));
+function average(arr) {
+  let total = 0;
+  arr.forEach(function(element) {
+    total += element;
+  });
+  return total / arr.length;
+}
