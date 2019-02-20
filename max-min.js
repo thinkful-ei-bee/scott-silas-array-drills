@@ -97,7 +97,6 @@ function turtle(arr) {
 }
 
 function decodeWords(words) {
-  let initialValue = '';
   const arrWords = words.split(' ');
   const reducer = (accumulator, currentValue) => {
     if (currentValue.length === 3) {
