@@ -90,23 +90,24 @@ iceWarning('Main St and Pacific Ave');
 iceWarning('Centinela Ave and Olympic Blvd');
 */
 
-/*function turtle(arr) {
+function turtle(arr) {
   let newArray = arr.filter((num) => num[0] >= 0 && num[1] >= 0);
   let mapArray = newArray.map((coord) => coord[0] + coord[1]);
-  mapArray.forEach((x) => console.log(x));
-}*/
+  //mapArray.forEach((x) => console.log(x));
+}
 
 function decodeWords(words) {
   let initialValue = '';
   const arrWords = words.split(' ');
   const reducer = (accumulator, currentValue) => {
-    if (currentValue !== '' && currentValue.length === 3) {
+    if (currentValue.length === 3) {
       accumulator += ' ';
-    } else if (currentValue !== '') {
+    } else {
       accumulator += currentValue[currentValue.length - 1].toUpperCase();
-    }
+    } 
+    return accumulator;
   }; 
-  console.log(arrWords.reduce(reducer(initialValue)));
+  return arrWords.reduce(reducer, '');
 }
 
-decodeWords('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest');
+//console.log(decodeWords('noggin oreo the moon time tele steed his tent apollo her lives though shoo tofu budapest'));
